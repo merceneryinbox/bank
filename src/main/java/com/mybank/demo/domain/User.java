@@ -1,36 +1,40 @@
 package com.mybank.demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Data
 public class User {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JoinColumn(name = "user_id")
+    @Column(name = "userId", nullable = false, updatable = false)
     @NonNull
     public Long uid;
-    @NonNull
+
     private String firstName;
-    @NonNull
     private String lastName;
-    @NonNull
-    private String email;
-    @NonNull
-    private String userName;
-    @NonNull
-    private String password;
-    @NonNull
-    private boolean permited;
-    @NonNull
-    private Account uAccount;
     
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+    private String userName;
+    private String password;
+    private boolean permited;
+    
+    @OneToOne
+    private PrimaryAccount primaryAccount;
+    
+    @OneToOne
+    private SavingsAccount savingsAccount;
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Appointment> appointmentList;
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Recipient> recipientList;
 }
