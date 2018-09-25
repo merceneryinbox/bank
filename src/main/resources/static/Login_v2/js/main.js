@@ -1,3 +1,4 @@
+
 (function ($) {
     "use strict";
 
@@ -12,7 +13,7 @@
             else {
                 $(this).removeClass('has-val');
             }
-        })
+        })    
     });
 
 

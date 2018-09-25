@@ -16,6 +16,11 @@ public class HomeController {
     @RequestMapping("/index")
     public String index(HttpServletResponse httpServletResponse) {
         httpServletResponse.setHeader("Cache-control", "no-cache,no-store,must-revalidate asdf");
-        return "/Login_v2/Login_v2/index";
+        return "/Login_v2/index";
+    }
+
+    @RequestMapping("/signup")
+    public String index() {
+        return "/sign-up-form/index";
     }
 }
