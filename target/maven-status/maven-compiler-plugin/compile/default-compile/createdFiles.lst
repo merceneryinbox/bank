@@ -1,0 +1,5 @@
+com/mybank/demo/DemobankApplication.class
+com/mybank/demo/domain/Account.class
+com/mybank/demo/controllers/HomeController.class
+com/mybank/demo/domain/TransactionMy.class
+com/mybank/demo/domain/User.class

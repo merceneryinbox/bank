@@ -1,0 +1,5 @@
+/root/work/bank/src/main/java/com/mybank/demo/DemobankApplication.java
+/root/work/bank/src/main/java/com/mybank/demo/controllers/HomeController.java
+/root/work/bank/src/main/java/com/mybank/demo/domain/Account.java
+/root/work/bank/src/main/java/com/mybank/demo/domain/User.java
+/root/work/bank/src/main/java/com/mybank/demo/domain/TransactionMy.java
