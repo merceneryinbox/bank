@@ -2,19 +2,18 @@ package com.mybank.demo.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.NonNull;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Data
 public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "userId", nullable = false, updatable = false)
-    @NonNull
-    public Long uid;
+    public Long userId;
 
     private String firstName;
     private String lastName;
@@ -23,7 +22,7 @@ public class User {
     private String email;
     private String userName;
     private String password;
-    private boolean permited;
+    private boolean enabled;
     
     @OneToOne
     private PrimaryAccount primaryAccount;
